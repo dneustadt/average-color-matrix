@@ -34,9 +34,9 @@ array(3) {
   ["x_percent"]=>
   float(25)
   ["tiles"]=>
-  array(2) {
+  array(4) {
     [0]=>
-    array(2) {
+    array(4) {
       [0]=>
       array(4) {
         ["r"]=>
@@ -50,21 +50,7 @@ array(3) {
       }
       [...]
     }
-    [1]=>
-    array(2) {
-      [0]=>
-      array(4) {
-        ["r"]=>
-        int(189)
-        ["g"]=>
-        int(179)
-        ["b"]=>
-        int(190)
-        ["hex"]=>
-        string(7) "#bdb3be"
-      }
-      [...]
-    }
+    [...]
   }
 }
 ```
