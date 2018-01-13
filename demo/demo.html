@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Average Color Matrix</title>
+        <style>
+            * {
+                font-family: sans-serif;
+            }
+            .container {
+                position: relative;
+            }
+            .container .tile {
+                float: left;
+            }
+            .container img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            .container:hover img {
+                display: block;
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Average Color Matrix</h1>
+        <p>
+            Hover over the container to see the source image.
+        </p>
+
+        <h2>4 x 4</h2>
+        <div class="container" style="width:800px;height:325px">
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#fefefe                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#edf2f3                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#f2f1f7                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#e6e6f3                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#c1c5d0                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#aaa7af                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#a8a7a6                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#b9b9b7                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#cfbec9                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#a38d99                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#a1a4b1                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#d6d7e2                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#a5a3ac                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#dedde9                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#dbdbe6                        "></div>
+            <div class="tile" style="
+width:25%;
+height:25%;
+background:#86868e                        "></div>
+            <img src="demo.jpg" style="width:800px;height:325px">
+        </div>
+
+        <h2>16 x 8</h2>
+        <div class="container" style="width:800px;height:325px">
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#fbfbfe                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#fefefe                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#fefefe                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#fefefe                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#fefefe                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#fafbfe                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#f7f9fe                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#f5f5fd                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#f4f6fb                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#f2f2fa                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#eeeff9                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ebebf7                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e8e7f5                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e5e4f2                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e5e4f2                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e5e4f2                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ffffff                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ffffff                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ffffff                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ffffff                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#fefefe                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#bfd0ca                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#d1e1de                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#f9fafd                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#fefefe                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ede7ed                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#f0edf1                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#f7fafd                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e9eaf6                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e6e6f2                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e7e6f3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e7e6f4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#d5d5d6                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#9da3b4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#abb0bf                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#9ba9c0                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#bec4d2                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#b5bac0                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#94a29d                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#a3a5a5                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#a6a4a7                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#908598                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#dad8d8                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#eff1f3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e7e7f3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e7e6f3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e6e6f2                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e8e7f4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#f5f5f8                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#dadae2                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#c8c9d4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#b8b9c8                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#a8a9b9                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#988b98                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ad939c                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#bfb9be                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#b6b6bd                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#8b8b8d                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#8a8a80                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#7d7c5f                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#6a6e5d                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#838161                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#8a896f                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#c5c5cf                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#eeeef7                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ebebf6                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e9e7f4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#dbc3d0                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#a5869d                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#7e5f78                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#855f65                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#aca6af                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#bebec9                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#7a7a81                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#9599a9                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#a2aac1                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#dcdce7                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#dddde8                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#d5d5e0                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#dcdce8                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e7e7f3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#aaaab4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ad838c                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ba7b83                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#8e5e64                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#826e75                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#c5c2ce                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e4e4f0                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e5e5f2                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#c6c6d1                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#7a7981                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#737a8d                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#aaacb8                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#ccccd8                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e5e4f1                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e7e6f2                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#d7d7e3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#626167                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#48474c                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#67545a                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#a49ca5                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#d8d7e3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e6e6f3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e8e7f4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e8e7f4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e7e7f3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#d7d7e3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#8d8d95                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#75747b                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#a1a0a9                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#9c9ca5                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#c0c0ca                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#dedeea                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#c9c9d5                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#acacb6                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#cac9d5                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e1e1ed                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e7e7f3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e8e7f4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e8e7f4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e8e7f4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e8e7f4                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#e7e7f3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#dedeea                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#a9a9b3                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#5d5d62                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#434247                        "></div>
+            <div class="tile" style="
+width:6.25%;
+height:12.5%;
+background:#818088                        "></div>
+            <img src="demo.jpg" style="width:800px;height:325px">
+        </div>
+    </body>
+</html>
