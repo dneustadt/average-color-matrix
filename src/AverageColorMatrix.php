@@ -38,15 +38,15 @@ class AverageColorMatrix
         list($width, $height) = getimagesize($this->path);
 
         $tiles = $this->getImageTiles(
-            round($height / $rows, 2, PHP_ROUND_HALF_DOWN),
-            round($width / $cols, 2, PHP_ROUND_HALF_DOWN),
+            (floor(($height / $rows) * 100) / 100),
+            (floor(($width / $cols) * 100) / 100),
             $rows,
             $cols
         );
 
         return [
-            'y_percent' => round(100 / $rows, 2, PHP_ROUND_HALF_DOWN),
-            'x_percent' => round(100 / $cols, 2, PHP_ROUND_HALF_DOWN),
+            'y_percent' => (floor((100 / $rows) * 100) / 100),
+            'x_percent' => (floor((100 / $cols) * 100) / 100),
             'tiles'     => $tiles,
         ];
     }
