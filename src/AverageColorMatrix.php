@@ -38,8 +38,8 @@ class AverageColorMatrix
         list($width, $height) = getimagesize($this->path);
 
         $tiles = $this->getImageTiles(
-            floor($height / $rows),
-            floor($width / $cols),
+            round($height / $rows, 2, PHP_ROUND_HALF_DOWN),
+            round($width / $cols, 2, PHP_ROUND_HALF_DOWN),
             $rows,
             $cols
         );
@@ -93,7 +93,7 @@ class AverageColorMatrix
                     'r'     => $r,
                     'g'     => $g,
                     'b'     => $b,
-                    'hex'   => '#'.dechex($r).dechex($g).dechex($b),
+                    'hex'   => sprintf("#%02x%02x%02x", $r, $g, $b),
                 ];
             }
         }
