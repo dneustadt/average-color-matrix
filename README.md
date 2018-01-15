@@ -2,6 +2,7 @@ AverageColorMatrix
 =====
 
 Generates a matrix in desired resolution of average colors of an image.
+Can also output result as SVG Markup.
 
 ## Demo
 
@@ -11,9 +12,12 @@ Generates a matrix in desired resolution of average colors of an image.
 
 Create an Instance of `AverageColorMatrix` passing the absolute path to the image.
 
-Call `get` method of said instance with the x, y resolution.
+Call `get` method of said instance with the x, y resolution. The third
+argument expects a boolean (default: `false`). If `true` the output
+will be SVG markup.
 
 Returns a nested array of rows and columns with RGB and hex values.
+Alternatively returns SVG markup ready to use.
 
 ## Example
 

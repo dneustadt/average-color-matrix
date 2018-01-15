@@ -1,7 +1,7 @@
 {
   "name": "dneustadt/average-color-matrix",
   "version": "1.0.0",
-  "keywords": ["image", "colors", "average", "matrix", "hex", "rgb"],
+  "keywords": ["image", "colors", "average", "matrix", "hex", "rgb", "svg"],
   "description": "Generates a matrix in desired resolution of average colors of an image",
   "homepage": "https://davidneustadt.de",
   "license": "MIT",

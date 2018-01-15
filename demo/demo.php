@@ -17,6 +17,8 @@
             'matrix' => $matrix->get(16, 8),
         ],
     ];
+
+    $svg = $matrix->get(32, 16, true);
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +33,8 @@
             }
             .container {
                 position: relative;
+                width: 800px;
+                height: 325px;
             }
             .container .tile {
                 float: left;
@@ -41,10 +45,16 @@
                 left: 0;
                 opacity: 0;
                 transition: all 0.3s ease;
+                width: 800px;
+                height: 325px;
             }
             .container:hover img {
                 display: block;
                 opacity: 1;
+            }
+            .container svg {
+                width: 100%;
+                height: auto;
             }
         </style>
     </head>
@@ -55,7 +65,7 @@
         </p>
         <?php foreach ($resolutions as $resolution): ?>
             <h2><?= $resolution['title'] ?></h2>
-            <div class="container" style="width:800px;height:325px">
+            <div class="container">
                 <?php foreach ($resolution['matrix']['tiles'] as $row): ?>
                     <?php foreach ($row as $col): ?>
                         <div class="tile" style="
@@ -65,8 +75,13 @@
                         "></div>
                     <?php endforeach; ?>
                 <?php endforeach; ?>
-                <img src="<?= $filename ?>" style="width:800px;height:325px">
+                <img src="<?= $filename ?>">
             </div>
         <?php endforeach; ?>
+        <h2>32 x 16 &amp; SVG</h2>
+        <div class="container">
+            <?= $svg ?>
+            <img src="<?= $filename ?>">
+        </div>
     </body>
 </html>

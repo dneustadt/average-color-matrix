@@ -31,9 +31,10 @@ class AverageColorMatrix
     /**
      * @param int $cols
      * @param int $rows
-     * @return array
+     * @param bool $svg
+     * @return string|array
      */
-    public function get($cols, $rows)
+    public function get($cols, $rows, $svg = false)
     {
         list($width, $height) = getimagesize($this->path);
 
@@ -41,14 +42,24 @@ class AverageColorMatrix
             (floor(($height / $rows) * 100) / 100),
             (floor(($width / $cols) * 100) / 100),
             $rows,
-            $cols
+            $cols,
+            $svg
         );
 
-        return [
-            'y_percent' => (floor((100 / $rows) * 100) / 100),
-            'x_percent' => (floor((100 / $cols) * 100) / 100),
-            'tiles'     => $tiles,
-        ];
+        if ($svg) {
+            return sprintf(
+                '<svg viewBox="0 0 %d %d"><g shape-rendering="crispEdges">%s</g></svg>',
+                $width,
+                $height,
+                $tiles
+            );
+        } else {
+            return [
+                'y_percent' => (floor((100 / $rows) * 100) / 100),
+                'x_percent' => (floor((100 / $cols) * 100) / 100),
+                'tiles'     => $tiles,
+            ];
+        }
     }
 
     /**
@@ -56,16 +67,18 @@ class AverageColorMatrix
      * @param int $width
      * @param int $rows
      * @param int $cols
-     * @return array
+     * @param bool $svg
+     * @return string|array
      */
     private function getImageTiles(
         $height,
         $width,
         $rows,
-        $cols
+        $cols,
+        $svg
     )
     {
-        $tiles = [];
+        $tiles = $svg ? '' : [];
 
         for ($y = 0; $y < $rows; $y++) {
             for ($x = 0; $x < $cols; $x++) {
@@ -76,8 +89,8 @@ class AverageColorMatrix
                     $this->image,
                     0,
                     0,
-                    $x * $width,
-                    $y * $height,
+                    ($x * $width),
+                    ($y * $height),
                     1,
                     1,
                     $width,
@@ -88,13 +101,25 @@ class AverageColorMatrix
                 $r = ($rgb >> 16) & 0xFF;
                 $g = ($rgb >> 8) & 0xFF;
                 $b = $rgb & 0xFF;
+                $hex = sprintf("#%02x%02x%02x", $r, $g, $b);
 
-                $tiles[$y][$x] = [
-                    'r'     => $r,
-                    'g'     => $g,
-                    'b'     => $b,
-                    'hex'   => sprintf("#%02x%02x%02x", $r, $g, $b),
-                ];
+                if ($svg) {
+                    $tiles .= sprintf(
+                        '<rect x="%g" y="%g" width="%g" height="%g" style="fill:%s;"></rect>',
+                        ($x * $width),
+                        ($y * $height),
+                        $width,
+                        $height,
+                        $hex
+                    );
+                } else {
+                    $tiles[$y][$x] = [
+                        'r'     => $r,
+                        'g'     => $g,
+                        'b'     => $b,
+                        'hex'   => $hex,
+                    ];
+                }
             }
         }
 
