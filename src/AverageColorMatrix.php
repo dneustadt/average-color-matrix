@@ -105,7 +105,7 @@ class AverageColorMatrix
 
                 if ($svg) {
                     $tiles .= sprintf(
-                        '<rect x="%g" y="%g" width="%g" height="%g" style="fill:%s;"></rect>',
+                        '<rect x="%g" y="%g" width="%g" height="%g" fill="%s"></rect>',
                         ($x * $width),
                         ($y * $height),
                         $width,
